@@ -10,25 +10,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * ControladorPez
+ * En esta clase se ara los crud de Pez
  * @author Edison
  */
 public class ControladorPez {
 
     private List<Pez> lista;
     private int codigo;
-
+    // Constructor
     public ControladorPez() {
         codigo = 0;
         lista = new ArrayList<>();
     }
-
+    // creacion del objeto tipo Pez
     public void create(Pez objeto) {
         codigo++;
         objeto.setCodigo(codigo);
         lista.add(objeto);
     }
-
+    // Leer el objeto tipo Pez
     public Pez read(int codigo) {
         for (Pez pez : lista) {
             if (pez.getCodigo() == codigo) {
@@ -37,7 +38,7 @@ public class ControladorPez {
         }
         return null;
     }
-
+    // Modificacion del objeto tipo Pez
     public void update(Pez objeto) {
         for (int i = 0; i < lista.size(); i++) {
             Pez elemento = lista.get(i);
@@ -46,7 +47,7 @@ public class ControladorPez {
             }
         }
     }
-
+    // Eliminacion del objeto tipo Pez
     public void delet(int codigo) {
         for (int i = 0; i < lista.size(); i++) {
             Pez elemento = lista.get(i);
@@ -56,13 +57,13 @@ public class ControladorPez {
             }
         }
     }
-    
+    // Listar los objetos tipo Pez
     public void listar (){
         for (Pez pez : lista) {
             System.out.println(pez);
         }
     }
-    
+    // Metodo extra para mostrar por pantalla los codigos de los objetos
     public void codigo(){
        for (Pez pez : lista) {
             System.out.println(pez.getCodigo()+". "+pez.getNombre());

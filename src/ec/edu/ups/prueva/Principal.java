@@ -35,17 +35,19 @@ public class Principal {
         int codigo;
         int o;
         do {
+            // Primer menu
             System.out.println("CRUD:\n\t1. Pez\n\t2. Ave\n\t3. Vascular\n\t4. No Vascular\n\t5. Salir");
             o = l2.nextInt();
             switch (o) {
                 case 1:
                     do {
+                        // Segundo menu
                         System.out.println("1. Create\n2. Reade\n3. Update\n4. Delete\n5. Listar\n6. Regresar");
                         metodo = l2.nextInt();
                         switch (metodo) {
 
                             case 1:
-
+                                
                                 System.out.println("INGRESAR DATOS DEL PEZ:");
                                 System.out.println("Ingresar nombre");
                                 String nombre = l.nextLine();
