@@ -65,9 +65,11 @@ public class ControladorPez {
     }
     // Metodo extra para mostrar por pantalla los codigos de los objetos
     public void codigo(){
+        
        for (Pez pez : lista) {
             System.out.println(pez.getCodigo()+". "+pez.getNombre());
         } 
+       
     }
 }
 

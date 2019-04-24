@@ -1,10 +1,5 @@
 package ec.edu.ups.prueva;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
 import ec.edu.ups.clontroladores.ControladorAve;
@@ -113,8 +108,8 @@ public class Principal {
                                     dulceSalada = l2.next();
                                     System.out.println("Ingrese que tipo de pez es");
                                     tipo = l.nextLine();
-                                    Pez pez2 = new Pez(profundida, aletas, dulceSalada, tipo, domesticoSalvaje, color, tipoAlimento, capacidadCazar, nombre, anosVida, peso, tamano, codigo);
-                                    cp.update(pez2);
+                                    pez = new Pez(profundida, aletas, dulceSalada, tipo, domesticoSalvaje, color, tipoAlimento, capacidadCazar, nombre, anosVida, peso, tamano, codigo);
+                                    cp.update(pez);
                                 } else {
                                     System.out.println("No existe el objeto");
                                 }
@@ -201,8 +196,8 @@ public class Principal {
                                     tamanoAlas = l2.nextDouble();
                                     System.out.println("Ingrese si es capaz de nadar (true/false)");
                                     capacidadNadar = l2.nextBoolean();
-                                    Ave ave2 = new Ave(maximaalturaVuelo, tamanoAlas, capacidadvolar, capacidadNadar, domesticoSalvaje, color, tipoAlimento, capacidadCazar, nombre, anosVida, peso, tamano, codigo);
-                                    ca.update(ave2);
+                                    ave = new Ave(maximaalturaVuelo, tamanoAlas, capacidadvolar, capacidadNadar, domesticoSalvaje, color, tipoAlimento, capacidadCazar, nombre, anosVida, peso, tamano, codigo);
+                                    ca.update(ave);
                                 } else {
                                     System.out.println("El objeto no existe");
                                 }
@@ -288,8 +283,8 @@ public class Principal {
                                     tamanoHoja = l2.nextDouble();
                                     System.out.println("Ingrese la cantidad maxiam de fruto que produce");
                                     cantidadMaximaFrutos = l2.nextInt();
-                                    Vascular vascular2 = new Vascular(tamanoRaiz, tamanoTallo, tamanoHoja, cantidadMaximaFrutos, hojas, frua, usoVegetal, lugarCrecimiento, nombre, anosVida, peso, tamano, codigo);
-                                    cv.update(vascular2);
+                                    vascular = new Vascular(tamanoRaiz, tamanoTallo, tamanoHoja, cantidadMaximaFrutos, hojas, frua, usoVegetal, lugarCrecimiento, nombre, anosVida, peso, tamano, codigo);
+                                    cv.update(vascular);
                                 } else {
                                     System.out.println("El objeno no existe");
                                 }
@@ -342,10 +337,12 @@ public class Principal {
                                 break;
                             case 2:
                                 System.out.println("Ingrese el codigo del objeto a leer");
+                                cnv.codigo();
                                 System.out.println(cnv.read(l2.nextInt()));
                                 break;
                             case 3:
                                 System.out.println("Ingresar codigo del objeto a modificar");
+                                cnv.codigo();
                                 codigo = l2.nextInt();
                                 if (cnv.read(codigo) != null) {
                                     System.out.println("INGRESAR DATOS DEL VEGETAL NO VASCULAR:");
@@ -373,14 +370,15 @@ public class Principal {
                                     escamas = l2.nextBoolean();
                                     System.out.println("Ingrese la cantidad de escamas");
                                     cantidadEscamas = l2.nextDouble();
-                                    NoVascular noVascular2 = new NoVascular(tipo, rizoides, escamas, cantidadEscamas, hojas, frua, usoVegetal, lugarCrecimiento, nombre, anosVida, peso, tamano, codigo);
-                                    cnv.update(noVascular2);
+                                    noVascular = new NoVascular(tipo, rizoides, escamas, cantidadEscamas, hojas, frua, usoVegetal, lugarCrecimiento, nombre, anosVida, peso, tamano, codigo);
+                                    cnv.update(noVascular);
                                 }else{
                                     System.out.println("El objeto no existe");
                                 }
                                 break;
                             case 4:
                                 System.out.println("Ingrese el codigo del objeto a elmiminar");
+                                cnv.codigo();
                                 codigo = l2.nextInt();
                                 cnv.delet(codigo);
                                 break;

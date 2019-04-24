@@ -54,4 +54,18 @@ public class ControladorNoVascular {
         System.out.println(lista.values());
     }
     
+    public void codigo(){
+        int c = 0;
+        int co = 0;
+        NoVascular nv = new NoVascular();
+        do {            
+            c++;
+            nv = lista.get(c);
+            if (nv != null){
+                co++;
+                System.out.println(nv.getCodigo()+". "+nv.getNombre());              
+            }
+        } while (co != lista.size());
+    }
+    
 }
